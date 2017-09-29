@@ -1,0 +1,51 @@
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.72);
+  display: none;
+  z-index: 999;
+}
+.alert{
+  font-size: 0.28rem;
+  width: 85%;
+  box-shadow: 1px 1px 3px #000;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: auto;
+  padding: 0.4rem;
+  box-sizing: border-box;
+  border-radius: 3px;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  text-align: center;
+  .alert-title{
+    font-size: 0.36rem;
+    color: @red;
+    font-weight: bold;
+  }
+  .alert-text{
+    color: @gray;
+    word-wrap:break-word;
+    padding: 0.4rem 0;
+  }
+  .alert-button{
+    margin-top: 0.3rem;
+    .cancel{
+      width: 45%;
+      margin-left:5px;
+      background-color: #eee;
+      border: 1px solid #d5d5d5;
+      color:#333;
+    }
+    .confirm{
+      width: 45%;
+
+    }
+  }
+}

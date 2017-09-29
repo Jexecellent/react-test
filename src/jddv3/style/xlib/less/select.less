@@ -1,0 +1,47 @@
+@import "variable";
+@import "layout";
+@import "assets";
+.xlib-select{
+  background-color: #fff;
+  position: relative;
+  border-bottom: 1px solid @xlib-border-color;
+  height: 4.7rem;
+  line-height: 4.7rem;
+  select{
+    -webkit-appearance: none;
+    opacity: 0;
+    color: #000;
+    text-indent: 1rem;
+    width: 100%;
+    height: 4.7rem;
+    line-height: 4.7rem;
+    border: 1px solid transparent;
+    background-color: #fff;
+    font-size: 1.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .context{
+    padding-right: 3rem;
+    p.content{ 
+      .nowrap;
+      text-indent: 1rem;
+      &.tips{ color: @xlib-placeholder-color; }
+    }
+    .guide{
+      float: right;
+      margin-right: -2.2rem;
+      i.assets-guide{ .xlib-assets-guide; }
+    }
+  }
+  .error{
+    line-height: 1.2rem;
+    position: absolute;
+    left: 10rem;
+    bottom: 0;
+    color: #ff0000;
+    display: none;
+  }
+  select[disabled]+.context .guide{ display: none; }
+}

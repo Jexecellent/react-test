@@ -1,0 +1,80 @@
+.bnsteps {
+  width:100%;
+  height:auto;
+  padding: 0 75px;
+  box-sizing: border-box;
+}
+.stepitem {
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  background: #fff;
+  .item-tail {
+      width:100%;
+      i {
+          position: absolute;
+          height:6px;
+          background: #E6E7E8;
+          width:100%;
+          left:20px;
+          top: 30%;
+          border-radius: 8px;
+      }
+  }
+  .item-icon {
+      width:50px;
+      height: 50px;
+      position: relative;
+      z-index: 9;
+      span {
+        display: block;
+        width:50px;
+        height:50px;
+        text-align: center;
+        border-radius: 100%;
+        background: #E6E7E8;
+        color:#fff;
+      }
+  }
+  .item-content {
+      max-width: 100px;
+      color: #666;
+      margin-top: 5px;
+      .title {
+          text-align: left;
+          margin-left: -15px;
+      }
+  }
+}
+.stepitem.finish{}
+.stepitem.finish .item-icon span,.stepitem.process .item-icon span {
+  background: #FF5D3D;
+}
+.stepitem .item-icon span.bnicon {
+background: #fff;
+color:#666;
+}
+.stepitem.finish,.stepitem.process{
+.item-icon span.bnicon{
+  color:#FF5D3D;
+}
+}
+.stepitem.finish .item-tail i {
+  background: #FF5D3D;
+}
+.stepitem.wait {
+  width:auto;
+}
+.stepitem:last-child {
+    width:auto;
+}
+.stepitem:last-child .item-tail {
+    display: none;
+}
+:global div[data-role="xlib-step"]{
+    height:146px;
+    padding-top:31px;
+    .proIcon{
+      font-size:50px;
+    }
+}

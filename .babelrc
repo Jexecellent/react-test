@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "latest", {
+        "es2015": {
+          "modules": false
+        }
+      }
+    ],
+    "stage-2",
+    "react"
+  ],
+  "plugins": [
+    ["import", { "libraryName": "@welab/xlib-react-components","libraryDirectory": "components","camel2DashComponentName": false, "style": false}],
+    "react-hot-loader/babel"
+  ]
+}
+

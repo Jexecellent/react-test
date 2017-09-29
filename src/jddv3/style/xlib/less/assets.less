@@ -1,0 +1,55 @@
+.xlib-assets(@w,@h){
+  width: @w;
+  height: @h;
+  line-height: @h;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.xlib-assets-clear{
+  .xlib-assets(16px,16px);
+  font-size: 11px;
+  border-radius: 50%;
+  background-color: #ccc;
+  font-style: normal;
+  color: #fff;
+  text-align: center;
+  &::after{
+    position: relative;
+    top: -1px;
+    content: "×";
+  }
+}
+
+.xlib-triangle(@w,@h,@t:#ccc,@r:transparent,@b:transparent,@l:transparent){
+  width: 0;
+  height: 0;
+  border-top: @h solid @t;
+  border-right: @w solid @r;
+  border-bottom: @h solid @b;
+  border-left: @w solid @l;
+}
+
+.xlib-assets-guide{
+  position: relative;
+  width: 12px;
+  height: 18px;
+  line-height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  &::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: " ";
+    .xlib-triangle(6px,9px,transparent,transparent,transparent,#ccc);
+  }
+  &::after{
+    position: absolute;
+    top: 0;
+    right: 1px;
+    content: " ";
+    .xlib-triangle(6px,9px,transparent,transparent,transparent,#fff);
+  }
+}
+

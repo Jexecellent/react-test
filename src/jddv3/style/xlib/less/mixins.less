@@ -1,0 +1,30 @@
+// mixins
+.bgpos(@x,@y) {
+	background-position: @x @y;
+}
+.scale(@x) {
+	-webkit-transform: scale(@x);
+	-moz-transform: scale(@x);
+	-ms-transform: scale(@x);
+	-o-transform: scale(@x);
+	transform: scale(@x);
+}
+.gradient(@form,@to) {
+	background: -webkit-linear-gradient( top, @form, @to);
+	background: -moz-linear-gradient( top, @form, @to);
+	background: -ms-linear-gradient( top, @form, @to);
+	background: -o-linear-gradient( top, @form, @to);
+	background: linear-gradient( top, @form, @to);
+}
+.translate(@x,@y) {
+	-webkit-transform: translate(@x,@y);
+	-moz-transform: translate(@x,@y);
+	-ms-transform: translate(@x,@y);
+	-o-transform: translate(@x,@y);
+	transform: translate(@x,@y);
+}
+.box-sizing(@x){
+	-webkit-box-sizing: @x;
+	-moz-box-sizing: @x;
+	box-sizing: @x;
+}

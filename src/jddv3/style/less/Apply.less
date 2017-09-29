@@ -1,0 +1,185 @@
+@import 'variable';
+.jdd-apply{
+  div[data-role="xlib-select"]{
+    select{
+      font-size: 0.14rem;
+    }
+    p{
+      text-indent: 0.4rem;
+    }
+  }
+  div[data-role="xlib-input"],div[data-role="xlib-select"]{
+    height: 120px;
+    line-height: 120px;
+  }
+  .jdd-apply-banner{
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    background-color: #FF5D3D;
+    background: url('//web.wolaidai.com/img/jddv3/apply-bg.png') no-repeat;
+    background-size: 100% 100%;
+    height: 340px;
+    background-position-y: bottom;
+    .borrower-headPortrait{
+      min-width: 148px;
+      min-height: 148px;
+      display: inline-block;
+      margin: 34px auto 20px;
+    }
+    .borrower-wrap{
+      font-size: 32px;
+    }
+    .title{
+      margin-top: 78px;
+      font-size: 30px;
+      line-height: 30px;
+    }
+    .guider{
+       margin-bottom: 42px;
+      font-size: 26px;
+    }
+    .amount{
+      width: 100%;
+      margin-bottom: 40px;
+      font-size: 114px;
+    }
+    .coupons{
+      position: absolute;
+      bottom: 0.2rem;
+      right: 0;
+      height: 0.6rem;
+      width: 1.74rem;
+      background: rgba(255,255,255,.2);
+      border-radius: 0.3rem 0 0 0.3rem;
+      text-align: right;
+      color: #fff;
+      font-size: 0.28rem;
+      line-height: 0.6rem;
+      padding-right: .1rem;
+      .iconfont{
+        font-size: 0.28rem;
+        margin-right: .1rem;
+      }
+    }
+  }
+  .oldUser,.newUser{
+    display: none;
+    &.active{
+      display: block;
+      &.intro-card-float{
+        display: flex;
+      }
+    }
+  }
+  .intro-card-float{
+    width: 720px;
+    height: 160px;
+    position: relative;
+    z-index: 99;
+    margin: -53px auto 28px;
+    background: white;
+    .card{
+      text-align: center;
+      width: 50%;
+      color: #999999;
+      .iconfont{
+        width:48px;
+        height:48px;
+        display: inline-block;
+        margin: 38px auto 15.5px;
+      }
+      &.card-myInfo{
+        position: relative;
+        &:after{
+          position: absolute;
+          right: 0;
+          top: 38px;
+          content: "";
+          width: 3px;
+          height: 84px;
+          background: #cccccc;
+        }
+      }
+    }
+  }
+  .jdd-apply-form{
+    position: relative;
+    background-color: white;
+    padding: 0 0 0 @form-padding-width;
+    margin-bottom: 1rem;
+    input{
+      text-indent: 0.4rem;
+    }
+    &::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: @form-padding-width;
+      content: " ";
+      border-bottom: 1px solid @border-color;
+      height: 100%;
+      .box-sizing(border-box);
+    }
+    .jdd-form-input,.jdd-form-select{
+      height: 120px;
+      line-height: 120px;
+      label{
+        font-weight: normal !important;
+        box-sizing: border-box;
+        float: left;
+        margin-left: -1.6rem;
+        width: 1.6rem;
+        height: 120px;
+        line-height: 120px;
+        border-bottom: 1px solid #ececec;
+        font-size: 0.28rem;
+      }
+      label::after{
+        content: "  (¥)";
+        font-size: 0.24rem;
+        color: #777777;
+        vertical-align: top;
+      }
+      label[for="tenor"]::after{
+        font-size: 0.22rem;
+        content: "  (月)";
+      }
+      label[for="fee"]+.xlib-input input{
+        color: @red;
+        font-size: 0.32rem;
+      }
+      input[name='fee']{
+        color: #ff5d3d;
+      }
+    }
+  }
+  .auths {
+    font-size: 0.28rem;
+    margin-top: 0.32rem;
+    .menu-bar {
+      border-bottom: 1px solid @border-color;
+      background: #fff;
+      padding: 0.3rem 0.3rem 0.3rem 0;
+      border-radius: 0;
+      .iconfont{
+        color: @red;
+        margin-right: 0.32rem;
+      }
+      .status{
+        font-size: 0.26rem;
+      }
+      .auth{
+        color: #5894DA;
+      }
+    }
+  }
+  .btn-box{
+    text-align: center;
+    button{
+      width:690px;
+      margin: 0;
+    }
+  }
+}

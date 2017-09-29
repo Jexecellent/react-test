@@ -1,0 +1,13 @@
+.clearfix { 
+  zoom:1; 
+  &::before, &::after{
+    display:table; 
+    content:''; 
+    clear:both;
+  }
+}
+.nowrap{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

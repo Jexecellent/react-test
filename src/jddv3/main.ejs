@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>我来贷</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="//<%=htmlWebpackPlugin.options.domain%>/common/images/favicon.ico" />
+    <script type="text/javascript" src="//<%=htmlWebpackPlugin.options.domain%>/js/flexible.min.js?v=b20170518"></script>
+    <script>
+      // fix flexible.js font size flash problem
+      document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+          if(document.body.style.display !== 'none') return
+          document.body.style.display = ''
+        },0)
+      })
+    </script>
+    <style type="text/css">
+      ::-webkit-input-placeholder { color: #d9d9d9; }
+      :-moz-placeholder { color: #d9d9d9; }
+      ::-moz-placeholder { color: #d9d9d9; }
+      :-ms-input-placeholder { color: #d9d9d9; }
+    </style>
+  </head>
+  <body style="display:none;">
+    <div id="app" class="clearfix"></div>
+    <div id="popup" class="popup"></div>
+    <div class="cp-spinner-mask"></div>
+    <div class="cp-spinner-wrap">
+      <div class="cp-spinner"></div>
+    </div>
+    <script>
+      var _mtac = {"senseQuery":1};
+      (function() {
+        var mta = document.createElement("script");
+        mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+        mta.setAttribute("name", "MTAH5");
+        mta.setAttribute("sid", "500529284");
+
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(mta, s);
+      })();
+    </script>
+    <!--script src="//pingjs.qq.com/h5/stats.js?v2.0.4" name="MTAH5" sid="500437276" cid="500437277"></script-->
+    <script type="text/javascript" src="//<%=htmlWebpackPlugin.options.domain%>/common/bundle/rct1554.bundle.js"></script>
+  </body>
+</html>

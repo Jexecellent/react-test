@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>我来贷</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="shortcut icon" type="image/x-icon" href="//web.wolaidai.com/common/images/favicon.ico" />
+    <script type="text/javascript" src="//web.wolaidai.com/js/flexible.min.js?v=b20170518"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function getQueryString(name,hash) {
+        var loc = window.location;
+        var url = hash ? loc.hash : loc.search;
+        var reg = new RegExp('(^|\\?|&)'+ name +'=([^&]*)(\\s|&|$)', 'i');
+        return reg.test(url) ? decodeURI(RegExp.$2.replace(/\+/g, ' ')) : '';
+      }
+      function createCookie(name,value,days) {
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime()+(days*24*60*60*1000));
+          var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/jddv3";
+      }
+      function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+      }
+      function getWXOpenID(wxCode){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4) {
+            if (xhr.status == 200){
+              var data = JSON.parse(xhr.responseText);
+              // 有用户信息则跳转下一步
+              if (data.openId) {
+                // 传给登录时绑定API
+                createCookie('openId', data.openId, {path: '/jddv3'});
+                if (data['X-User-Mobile']) {
+                  // 已绑定我来贷帐户
+                  createCookie('X-User-Mobile', data['X-User-Mobile'], {expires: 7, domain: '.wolaidai.com', path: '/'});
+                  createCookie('X-User-Token', data['X-User-Token'], {expires: 7, domain: '.wolaidai.com', path: '/'});
+                  //登录分发
+                }else{
+                  // 未绑定我来贷帐户
+                  location.href = '/jddv3/login';
+                }
+              }
+            }else{
+              // todo 还可以再优化下400时的处理
+              location.hostname !== 'm.wolaidai.com' && alert("login Error getWXOpenID: " + xhr.status);
+              location.href = '/jddv3/login';
+            }
+          }
+        };
+        var baseUrl = (location.hostname == 'm.wolaidai.com'?'https://japi.wolaidai.com/jrocket2/api/':'http://ijapi3.wolaidai.com/jrocket2/api/');
+        var url = baseUrl + 'h5/checkUserStatus?stemFrom=WX&code='+wxCode;
+        xhr.open('GET', url, true);
+        xhr.send(null);
+      }
+
+      function getAppID() {
+        return location.hostname === 'm.wolaidai.com'?'wx90938385967c21c5':'wxe4d9290d17ea08d0';
+      }
+      function isWeixin() {
+        return !!window.navigator.userAgent.match(/MicroMessenger/i);
+      }
+
+    // auth checked auto jump
+    var channel = getQueryString('channel');
+    channel && createCookie('channel', channel, {path: '/jddv3'});
+    if (readCookie('X-User-Mobile') && readCookie('X-User-Token')){
+      //登录分发
+    }else if(isWeixin()){
+      //wechat login
+      var wechatCode = getQueryString('code');
+      if (wechatCode){
+        getWXOpenID(wechatCode);
+      }else{
+        var oauthURI = 'https://open.weixin.qq.com/connect/oauth2/authorize';
+        oauthURI += '?appid=' + getAppID();
+        oauthURI += '&response_type=code';
+        oauthURI += '&scope=snsapi_base';
+        oauthURI += '&state=auth';
+        oauthURI += '&redirect_uri=' + encodeURIComponent(location.href);
+        oauthURI += '#wechat_redirect';
+        location.href = oauthURI;
+      }
+    }else{
+      location.href = '/jddv3/login';
+    }
+      
+    </script>
+  </body>
+</html>

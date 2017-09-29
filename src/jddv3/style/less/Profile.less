@@ -1,0 +1,71 @@
+.profile{
+  .tipDesc{
+    font-size: 24px;
+    line-height: 70px;
+    color: #bbb;
+    text-align: center;
+  }
+
+  .section{
+    margin-bottom: 16px;
+    background-color: #fff;
+    padding-left: 30px;
+    div[data-role="form-group"]{
+      > div{
+        padding-left: 132px;
+        display: block;
+        > label{
+          width: 132px;
+          margin: 0 0 0 -132px;
+          float: left;
+        }
+      }
+
+      div[data-role="xlib-input"]{
+        border-bottom: 0;
+      }
+
+      *[data-role="button-select"]{
+        width: auto;
+        display: block;
+        label{
+          margin-top: 17px;
+          margin-right: 0px;
+          line-height: 60px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .arrowRight{
+    position: relative;
+    &:after{
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #a8a8a8;
+      border-top: none;
+      border-left: none;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 40px;
+      right: 30px;
+    }
+  }
+
+  .actions{
+    text-align: center;
+    button{
+      width: 600px;
+      margin: 54px auto;
+      border-radius: 6px;
+      box-shadow: 0 10px 22px 0 rgba(255,93,61,0.20);
+    }
+  }
+  .btn{
+    margin-top: .72rem;
+    margin-bottom: 1.19rem;
+  }
+}

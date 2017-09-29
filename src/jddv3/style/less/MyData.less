@@ -1,0 +1,22 @@
+.my-data{
+  ul{
+    background-color: #fff;
+    .flexbox();
+    li{
+      .flex(1 1 auto);
+      height: .98rem;
+      font-size: .32rem;
+      line-height: .98rem;
+      text-align: center;
+      a{
+        color: #b3b3b3;
+      }
+      &.active{
+        border-bottom: 2px @red solid;
+        a{
+          color: @red;
+        }
+      }
+    }
+  }
+}
