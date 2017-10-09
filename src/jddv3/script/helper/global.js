@@ -27,8 +27,8 @@ export default {
       });
     }
     // code for compatibility with other project
-    let apiDomain = Config.env.i4,
-        wolaidaiAPIpath = $.fn.cookie('wolaidai_api_path') || Config.env.i4;
+    let apiDomain = Config.env.i5,
+        wolaidaiAPIpath = $.fn.cookie('wolaidai_api_path') || Config.env.i5;
     if (wolaidaiAPIpath.length && wolaidaiAPIpath.indexOf('jrocket2')>-1 ) {
       let l = document.createElement('a');
       l.href = wolaidaiAPIpath;

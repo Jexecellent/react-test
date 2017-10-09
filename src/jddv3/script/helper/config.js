@@ -10,6 +10,7 @@ export default {
     i2: '//ijapi2.wolaidai.com/',
     i3: '//ijapi3.wolaidai.com/',
     i4: '//ijapi4.wolaidai.com/',
+    i5: '//ijapi.wolaidai.com/',
     staging: '//sapi.wolaidai.com/',
     production: 'https://japi.wolaidai.com/'
   },

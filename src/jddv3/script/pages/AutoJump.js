@@ -15,10 +15,10 @@ class AutoJump extends React.Component{
     }
 
     if(path) {
-      location.href = path;
+      this.props.history.push(path);
     } else {
       Biz.switchPageInfo((path) => {
-        location.href = path;
+        this.props.history.push(path);
       });
     }
   }

@@ -204,7 +204,7 @@ class Login extends Component{
                        proxy="《注册与服务协议》" checked="true"/>
             <div className='process-img'></div>
             {!utils.isProductEnv() ? <APIConfig storeKey="wolaidai_api_path"
-                                                defaultPath="http://ijapi3.wolaidai.com/jrocket2/api/"></APIConfig> : ''}
+                                                defaultPath="http://ijapi5.wolaidai.com/jrocket2/api/"></APIConfig> : ''}
           </div>
         </div>
       </FullScreen>

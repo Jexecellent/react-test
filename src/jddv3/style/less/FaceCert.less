@@ -43,5 +43,43 @@
     top:2.11rem;
     left: 1.05rem;
     border-radius: 8px;
+    img{
+      &.person{
+        width: 3.53rem;
+        height: 3.76rem;
+        margin: .67rem .93rem 0;
+      }
+      &.eyes{
+        position: absolute;
+        top: 1.88rem;
+        left: 2.13rem;
+      }
+    }
+  }
+  .over{ 
+    position: absolute; 
+    width: 3.53rem;
+    height: 3.76rem;
+    top: .67rem; 
+    left: .93rem; 
+    z-index: 2; 
+    background: linear-gradient(180deg, rgba(76,182,235,.7), rgba(255,255,255,0));
+    animation: myScan 3.5s infinite alternate; 
+    -webkit-animation: myScan 3.5s infinite alternate; 
+  }
+  .desc{
+    text-align: center;
+    font-size: .4rem;
+    line-height: .56rem;
+    color: @red;
+    margin-top: .38rem;
+  }
+  @keyframes  myScan{
+    from { top:.67rem;height: 3.76rem; }
+    to { top: 4.43rem;height: 0; }
+  }
+  @-webkit-keyframes myScan{
+    from { top:.67rem;height: 3.76rem; }
+    to { top: 4.43rem;height: 0; }
   }
 }

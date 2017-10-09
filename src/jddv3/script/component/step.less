@@ -38,7 +38,7 @@
   }
   .item-content {
       max-width: 100px;
-      color: #666;
+      color: #999;
       margin-top: 5px;
       .title {
           text-align: left;
@@ -46,13 +46,15 @@
       }
   }
 }
-.stepitem.finish{}
+.stepitem.finish .item-content, .stepitem.process .item-content{
+  color:#666;
+}
 .stepitem.finish .item-icon span,.stepitem.process .item-icon span {
   background: #FF5D3D;
 }
 .stepitem .item-icon span.bnicon {
 background: #fff;
-color:#666;
+color:#e6e7e8;
 }
 .stepitem.finish,.stepitem.process{
 .item-icon span.bnicon{
