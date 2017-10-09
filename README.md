@@ -3,7 +3,6 @@
 `(recommend)` Install [Yarn](https://yarnpkg.com/) instead of NPM
 
 ```sh
-$ yarn config set registry http://npm.wolaidai.com:8080/
 $ yarn install
 ```
 
